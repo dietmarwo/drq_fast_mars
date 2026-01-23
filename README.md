@@ -4,6 +4,17 @@ A performance-optimized fork of the CoreWar MARS (Memory Array Redcode Simulator
 
 The initial optimization work was created with Claude Opus 4.5. Optimizing MARS is also a useful LLM benchmark: in practice, I encountered recurring correctness and performance pitfalls when attempting similar changes with other models. I tried ChatGPT 5.2 extended thinking and Gemini 3.0 Pro. 
 
+The corresponding publication, [`drq publication`](https://pub.sakana.ai/drq/) can also serve as an additional benchmark for LLM-based critique tasks. 
+For example: “Review the paper and identify weaknesses.” An example output (Claude Opus 4.5) 
+is shown here: [`drq review`](https://github.com/dietmarwo/drq_fast_mars/blob/master/drq_analysis.md).
+
+The main criticism is that the approach involves little or no learning in the usual sense. 
+The core mechanism is the well-established MAP-Elites optimization algorithm, paired with a fixed (non-adaptive) LLM-based mutator. 
+That mutator is itself pretrained on human-produced data and therefore implicitly leverages human knowledge—potentially including 
+Core War tutorials, strategy discussions, academic papers, and archives of successful warriors.
+
+That said, using LLMs as mutation operators within evolutionary optimization is a strong and promising idea.
+
 ## Performance Summary
 
 Benchmark configuration: **480 rounds**, **5 warriors**, **24 parallel worker processes**, running on an **AMD 9950X (16 cores)**. End-to-end runtime is **~13.9 seconds** for this configuration.
