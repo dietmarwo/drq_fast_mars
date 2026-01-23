@@ -20,13 +20,13 @@ Benchmark configuration: **480 rounds**, **5 warriors**, **24 parallel worker pr
 
 ## Usage
 
-- The optimized MARS engine is implemented in [`mars.py`](https://github.com/dietmarwo/drq/blob/master/src/corewar/mars.py). Do not install the `corewar` library separately for this fork; when developing the engine, keep it inside the `src` directory.
+- The optimized MARS engine is implemented in [`mars.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/corewar/mars.py). Do not install the `corewar` library separately for this fork; when developing the engine, keep it inside the `src` directory.
 - The `MARS` constructor supports two additional parameters:
   - `debug=False`: set to `True` to enable debug/trace output and debug assertions (disabled by default).
   - `track_coverage=True`: set to `False` to disable memory coverage tracking when it is not needed (negligible impact in benchmarks).
-- [`corewar_util.py`](https://github.com/dietmarwo/drq/blob/master/src/corewar_util.py) is adapted accordingly.
+- [`corewar_util.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/corewar_util.py) is adapted accordingly.
   - `run_multiple_rounds`: when `timeout=None`, an optimized parallelization strategy is used.
-- [`drqtest.py`](https://github.com/dietmarwo/drq/blob/master/src/drqtest.py) provides a simple performance test harness.
+- [`drqtest.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/drqtest.py) provides a simple performance test harness.
   - Run `time python src/drqtest.py` to collect timing information.
 
 ## Changes
