@@ -1,0 +1,1 @@
+Mutate (change) the following Core War program in a way that is likely to improve its performance (survive and kill other programs). Write only the new updated program (with comments explaining what it does) and nothing else. ONLY DEFINE LABELS ON THE SAME LINE AS AN INSTRUCTION. Wrap program around ``` tags.

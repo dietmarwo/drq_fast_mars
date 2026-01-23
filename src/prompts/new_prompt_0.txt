@@ -1,0 +1,1 @@
+Create a new valid Core War program in redcode. Be creative. Write only the new program (with comments explaining what it does) and nothing else. ONLY DEFINE LABELS ON THE SAME LINE AS AN INSTRUCTION. Wrap program around ``` tags.

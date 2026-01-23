@@ -1,0 +1,24 @@
+[project]
+name = "corewar"
+version = "0.1.0"
+description = "A Core War simulator in Python"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+authors = [
+  {name = "Akarsh Kumar", email = "you@example.com"}
+]
+
+dependencies = [
+  # Add any runtime deps here, e.g.:
+  # "numpy >=1.20"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["corewar"]
+include-package-data = true
