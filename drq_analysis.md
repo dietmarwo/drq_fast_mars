@@ -579,6 +579,82 @@ Note: No fitness information, no battle results, no strategic guidance.
 
 ---
 
+## Appendix C: Wouldn't You Expect a Higher Standard from MIT?
+
+You raise a very fair point. Let me be direct about this.
+
+### The Standards Issue
+
+Yes, you would expect higher standards from MIT. Specifically:
+
+| Issue | What MIT Standards Should Require |
+|-------|-----------------------------------|
+| "LLM-driven evolution" | Precise language: "LLM as mutation operator in MAP-Elites" |
+| "Self-play learning" | Clarify: selection learns, LLM doesn't |
+| "Minimal human knowledge" | Acknowledge: LLM encodes extensive pretraining knowledge |
+| Missing baselines | Compare to non-LLM mutation operators |
+| Conflated contributions | Separate MAP-Elites findings from LLM claims |
+
+### Why This Happens
+
+Several systemic factors:
+
+**1. Industry-Academia Conflicts**
+- Sakana AI has a corporate narrative: "nature-inspired AI evolution"
+- The paper serves their marketing: "LLMs evolve programs through self-play"
+- MIT researchers may benefit from the collaboration (compute, funding, visibility)
+- This creates pressure to frame results favorably for the company
+
+**2. The "Sexy Narrative" Problem**
+- "LLM learns through self-play" → gets attention, citations, press coverage
+- "MAP-Elites with LLM mutation operator" → technically accurate but boring
+- Reviewers and editors reward compelling narratives
+
+**3. AI Research Culture**
+- Rapid publication pressure
+- arXiv-first culture reduces peer review rigor
+- "State of the art" framing even for incremental work
+- Hype cycle incentivizes overclaiming
+
+### What Rigorous Framing Would Look Like
+
+A more honest abstract:
+
+> "We study MAP-Elites optimization in Core War with a shifting fitness landscape (Red Queen dynamics). We use a pretrained LLM as a mutation operator, leveraging its prior knowledge to propose syntactically valid code modifications. **The LLM receives no performance feedback and does not learn during optimization; all adaptation occurs through evolutionary selection.** Our key empirical finding is phenotypic convergence without genotypic convergence across independent runs."
+
+### The Deeper Problem
+
+This isn't unique to this paper. It reflects a broader issue in AI research:
+
+| What Papers Claim | What's Actually Happening |
+|-------------------|---------------------------|
+| "AI discovers X" | Search algorithm + human-designed objective finds X |
+| "Learning from self-play" | Selection pressure on frozen model outputs |
+| "Emergent behavior" | Predictable outcome of reward shaping |
+| "No human knowledge" | Pretrained on internet-scale human data |
+
+### To Be Fair
+
+The **empirical science** in the paper is solid:
+- Convergent evolution finding is genuinely interesting
+- MAP-Elites ablation is proper methodology
+- Analysis of cycle reduction with history length K is valuable
+
+The problem is the **framing layer** that sits on top, which appears designed to serve Sakana AI's corporate narrative more than scientific clarity.
+
+### The MIT Brand Question
+
+MIT's reputation is built on:
+- Rigorous methodology
+- Honest reporting of limitations
+- Clear distinction between claims and evidence
+
+When MIT researchers co-author papers with startup marketing language, it lends unearned credibility to overclaims. The institution's name becomes a stamp of approval for narratives that wouldn't survive strict peer review.
+
+This is a systemic issue across top institutions collaborating with AI companies (Stanford + Google, Berkeley + OpenAI, etc.). The incentives are misaligned: companies want hype, academics want publications and funding, and rigorous framing serves neither interest in the short term.
+
+---
+
 ## References
 
 1. Kumar, A., et al. (2026). Digital Red Queen: Adversarial Program Evolution in Core War with LLMs.
