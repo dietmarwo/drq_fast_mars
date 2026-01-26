@@ -581,8 +581,6 @@ Note: No fitness information, no battle results, no strategic guidance.
 
 ## Appendix C: Wouldn't You Expect a Higher Standard from MIT?
 
-You raise a very fair point. Let me be direct about this.
-
 ### The Standards Issue
 
 Yes, you would expect higher standards from MIT. Specifically:
