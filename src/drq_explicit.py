@@ -91,7 +91,7 @@ class Args:
     log_every: int = 10
     sample_new_percent: float = 0.1
     bc_axes: str = "tsp,mc"
-    n_init: int = 24
+    n_init: int = 8
     n_mutate: int = 1
     fitness_threshold: float = 10.0  # Set high to disable early stopping
     single_cell: bool | None = False
