@@ -71,7 +71,7 @@ def _evaluate_warmstart_warrior_multi(args_tuple):
 class Args:
     # General arguments
     seed: int = 0
-    save_dir: str | None = 'results/explicit_18b'
+    save_dir: str | None = None
     n_processes: int = 24
     resume: bool | None = False
     job_timeout: int = 24 * 60 * 60
@@ -81,8 +81,7 @@ class Args:
     timeout: int = 900
 
     # Opponent arguments
-    #opponent_dir: str = "../human_warriors"  # Directory containing opponent .red files
-    opponent_dir: str = "../warrior_multi"
+    opponent_dir: str = "../human_warriors"  # Directory containing opponent .red files
     opponent_pattern: str = "*.red"  # Glob pattern for opponent files
     max_opponents: int | None = None  # Limit number of opponents (None = use all)
 
@@ -102,8 +101,7 @@ class Args:
     reevaluate_carried: bool = True
 
     # Warmstart from previous run
-    #warmstart_dir: str | None = 'results/explicit_16/final_niches'  # Directory containing .red files to seed archive
-    warmstart_dir: str | None = "results/explicit_18/final_niches"  # Directory containing .red files to seed archive
+    warmstart_dir: str | None = None  # Directory containing .red files to seed archive
     warmstart_pattern: str = "*.red"  # Glob pattern for warmstart files
 
 

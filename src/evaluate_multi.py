@@ -38,19 +38,19 @@ from corewar_util import (
 @dataclass
 class Args:
     # Input directories
-    warrior_dir: str = "../drqres"  # Directory containing warriors to evaluate
+    warrior_dir: str = "./warriors"  # Directory containing warriors to evaluate
     warrior_pattern: str = "*.red"
-    opponent_dir: str = "../warrior_multi"
+    opponent_dir: str = "./opponents"  # Directory containing opponent warriors
     opponent_pattern: str = "*.red"
-    
+
     # Output
     output_csv: str = "multi_scores.csv"
-    
+
     # Simulation settings
     simargs: SimulationArgs = field(default_factory=SimulationArgs)
     n_processes: int = 24
     timeout: int = 900
-    
+
     # Sampling options (optional)
     opponents_num: int | None = None  # Number of opponents to sample (None = use all)
     num_runs: int = 1  # Number of sampling runs to average

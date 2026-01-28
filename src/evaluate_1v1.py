@@ -50,23 +50,22 @@ from corewar_util import (
 @dataclass
 class Args:
     # Input directories
-    warrior_dir: str = "../drqres"  # Directory containing warriors to evaluate
+    warrior_dir: str = "./warriors"  # Directory containing warriors to evaluate
     warrior_pattern: str = "*.red"
-    #opponent_dir: str = "../warrior_1v1"  # Directory containing opponent warriors
-    opponent_dir: str = "../human_warriors"  # Directory containing opponent warriors
+    opponent_dir: str = "./opponents"  # Directory containing opponent warriors
     opponent_pattern: str = "*.red"
-    
+
     # Output
     output_csv: str = "hill_scores.csv"
     pairings_csv: str | None = None  # Optional: save individual pairing results
-    
+
     # Simulation settings
     simargs: SimulationArgs = field(default_factory=SimulationArgs)
     n_processes: int = 24
-    
+
     # Scoring mode
     gradual_scoring: bool = False  # Use gradual scoring for smoother fitness
-    
+
     # Random seed
     seed: int = 42
 

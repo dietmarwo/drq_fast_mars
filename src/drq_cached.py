@@ -74,11 +74,12 @@ def _evaluate_warmstart_pairing(args_tuple):
         'avg_loss_cycles': float(result.get('avg_loss_cycles', 0)),
     }
 
+
 @dataclass
 class Args:
     # General arguments
     seed: int = 0
-    save_dir: str | None = 'results/explicit_16_1v1'
+    save_dir: str | None = None
     n_processes: int = 24
     resume: bool | None = False
     job_timeout: int = 24 * 60 * 60
@@ -88,21 +89,21 @@ class Args:
     timeout: int = 900
 
     # Opponent arguments
-    opponent_dir: str = "../warrior_1v1"
+    opponent_dir: str = "../human_warriors"
     opponent_pattern: str = "*.red"
     max_opponents: int | None = None
 
     # DRQ arguments
-    n_rounds: int = 120
+    n_rounds: int = 10
     n_iters: int = 100
     log_every: int = 10
     sample_new_percent: float = 0.1
     bc_axes: str = "tsp,mc"
     n_init: int = 8
     n_mutate: int = 1
-    fitness_threshold: float = 10000.0
+    fitness_threshold: float = 100.0  # Hill score percentage threshold
     single_cell: bool | None = False
-    
+
     # Scoring mode
     gradual_scoring: bool = True  # Use gradual scoring for smoother optimization
 
@@ -113,13 +114,10 @@ class Args:
     # CSV output
     pairings_csv: str = "pairings.csv"
     scores_csv: str = "warrior_scores.csv"
-    
-    # Warmstart from previous run
-    #warmstart_dir: str | None = 'results/explicit_16/final_niches'  # Directory containing .red files to seed archive
-    #warmstart_dir: str | None = 'results/drqres'  # Directory containing .red files to seed archive
-    warmstart_dir: str | None = "../warrior_1v1"#"../human_warriors"  # Directory containing .red files to seed archive
-    warmstart_pattern: str = "*.red"  # Glob pattern for warmstart files
 
+    # Warmstart from previous run
+    warmstart_dir: str | None = None  # Directory containing .red files to seed archive
+    warmstart_pattern: str = "*.red"  # Glob pattern for warmstart files
 
 class MapElites:
     def __init__(self):
