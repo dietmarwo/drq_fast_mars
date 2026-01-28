@@ -22,7 +22,7 @@ the original repository by new python scripts:
 - [`drq_cached.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/drq_cached.py) Simplified DRQ using only explicit mutation operators, 1v1 with pairwise caching.
 - [`evaluate_1v1.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/evaluate_1v1.py) Evaluate warriors using 1v1 pairwise battles with standard hill scoring.
 - [`evaluate_multi.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/evaluate_multi.py) Evaluate warriors using multi-warrior MARS simulation (original DRQ scoring).
-- [`mutator1v1_opus.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/mutator1v1_opus.py) Explicit Core War Mutator for 1v1 battles.
+- [`mutator_1v1_opus.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/mutator_1v1_opus.py) Explicit Core War Mutator for 1v1 battles.
 - [`mutator_multi_opus.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/mutator_multi_opus.py) Explicit Core War Mutator for melee / multi-warrior.
 
 Some files were extended for 1v1 scoring:
