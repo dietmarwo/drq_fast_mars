@@ -33,6 +33,7 @@ The LLM-based mutator from the DRQ paper does not truly "learn" during optimizat
 3. Adaptive Mutation Count - Apply fewer mutations to high-performing warriors (exploitation) and more to low-performers (exploration)
 
 With these additions, the explicit mutator learns and adapts during optimization. In principle, an LLM-based mutator could also be enhanced by providing it with historical context—past warrior scores, successful patterns, and mutation outcomes. However, self-play evaluation introduces substantial score fluctuations between rounds as the opponent population shifts, which complicates learning from historical fitness values. Using a fixed opponent set, as we do here, provides stable fitness signals that make online learning more effective.
+
 ## Methodology
 
 ### Required Tools
