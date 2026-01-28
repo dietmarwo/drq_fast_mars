@@ -15,6 +15,20 @@ Core War tutorials, strategy discussions, academic papers, and archives of succe
 
 That said, using LLMs as mutation operators within evolutionary optimization is a strong and promising idea.
 
+Although the review of the drq publication could be fully automated, we switch to "AI-assisted"-mode for a more detailed analysis:
+[`fixed mutator analysis`](https://github.com/dietmarwo/drq_fast_mars/blob/master/fixed_mutator.md) . In this context we extend 
+the original repository by new python scripts: 
+- [`drq_explicit.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/corewar/drq_explicit.py)
+- [`drq_cached.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/corewar/drq_cached.py)
+- [`evaluate_1v1.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/corewar/evaluate_1v1.py)
+- [`evaluate_multi.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/corewar/evaluate_multi.py)
+- [`explicit_mutator2_warmstart.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/corewar/explicit_mutator2_warmstart.py)
+- [`explicit_mutator2.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/corewar/explicit_mutator2.py)
+- [`explicit_mutator_1v1.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/corewar/explicit_mutator_1v1.py)
+
+Some files were extended for 1v1 scoring:
+[`corewar_util.py`](https://github.com/dietmarwo/drq_fast_mars/blob/master/src/corewar/corewar_util.py)
+
 ## Performance Summary
 
 Benchmark configuration: **480 rounds**, **5 warriors**, **24 parallel worker processes**, running on an **AMD 9950X (16 cores)**. End-to-end runtime is **~13.9 seconds** for this configuration.
