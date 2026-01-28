@@ -167,8 +167,7 @@ class Main:
         np.random.seed(args.seed)
 
         # Initialize explicit mutator (use 1v1 optimized version)
-        from explicit_mutator_1v1 import ExplicitCoreMutator
-        #from explicit_mutator2 import ExplicitCoreMutator
+        from mutator1v1_opus import ExplicitCoreMutator
         # warmstart_mode=True for conservative mutations when warmstarting
         warmstart = args.warmstart_dir is not None
         self.mutator = ExplicitCoreMutator(

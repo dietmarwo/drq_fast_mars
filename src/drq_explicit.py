@@ -153,18 +153,14 @@ class Main:
         random.seed(args.seed)
         np.random.seed(args.seed)
 
-        # Initialize explicit mutator
-        # Use warmstart-optimized version when warmstarting
-        if args.warmstart_dir:
-            from explicit_mutator2_warmstart import ExplicitCoreMutator
-            self.mutator = ExplicitCoreMutator(
-                environment=simargs_to_environment(args.simargs),
-                warmstart_mode=True
-            )
-            print("Using warmstart-optimized mutator (conservative mutations)")
-        else:
-            from explicit_mutator2 import ExplicitCoreMutator
-            self.mutator = ExplicitCoreMutator(environment=simargs_to_environment(args.simargs))
+        # Initialize explicit mutator (use melee optimized version)
+        from mutator_multi_opus import ExplicitCoreMutator
+        # warmstart_mode=True for conservative mutations when warmstarting
+        warmstart = args.warmstart_dir is not None
+        self.mutator = ExplicitCoreMutator(
+            environment=simargs_to_environment(args.simargs),
+            warmstart_mode=warmstart
+        )
 
         # Load opponents from directory
         self.init_opps = self._load_opponents()
