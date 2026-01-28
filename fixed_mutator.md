@@ -24,8 +24,15 @@ Our approach uses fixed, diverse, curated warrior sets for both optimization and
 
 Beyond random initialization, we also test whether existing human-written warriors can be improved by initializing the population with a curated opponent set. Note that improvements against the curated set don't guarantee improvements against all 317 opponents.
 
-We acknowledge that changing multiple variables simultaneously limits insight into individual contributions. We leave ablation studies for future research. However, the changes may be interdependent—perhaps the fixed mutator works better with a fixed opponent set—making isolated testing less informative.
+We acknowledge that changing multiple variables simultaneously limits insight into individual contributions. We leave ablation studies for future research. However, the changes may be interdependent—perhaps the fixed mutator works better with a fixed opponent set - making isolated testing less informative.
 
+The LLM-based mutator from the DRQ paper does not truly "learn" during optimization - it relies on pretrained knowledge and remains static throughout the run. The explicit rule-based mutators we developed behave differently. We tasked Claude Opus 4.5 with proposing improvements, and it generated nine suggestions which it then implemented autonomously. Three of these introduce genuine online learning:
+
+1. Mutation Success Tracking - Track which mutation types improve fitness and adjust their selection probabilities accordingly
+2. Contextual Pattern Learning - Extract and reuse successful instruction patterns from the archive, not just individual constants
+3. Adaptive Mutation Count - Apply fewer mutations to high-performing warriors (exploitation) and more to low-performers (exploration)
+
+With these additions, the explicit mutator learns and adapts during optimization. In principle, an LLM-based mutator could also be enhanced by providing it with historical context—past warrior scores, successful patterns, and mutation outcomes. However, self-play evaluation introduces substantial score fluctuations between rounds as the opponent population shifts, which complicates learning from historical fitness values. Using a fixed opponent set, as we do here, provides stable fitness signals that make online learning more effective.
 ## Methodology
 
 ### Required Tools
